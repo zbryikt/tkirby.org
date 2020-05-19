@@ -1,0 +1,46 @@
+
+			<h2>tkirby.org 遭受駭客攻擊</h2>
+
+			<div class="entry">
+				<p>前幾天連上 tkirby.org 發現 Google 提出的警告，關於 tkirby.org 可能在散布惡意軟體：</p>
+<p><img height="540" width="960" alt="" src="http://tkirby.org/blog/wp-content/uploads/2011/11/warning.png" title="警告：這裡有些不對勁！" class="alignnone"></p>
+<p>簡單的研究了一下，發現網站遭到入侵，並且找出了下列三項改動：</p>
+<ol>
+<li>tkirby.org/ 下所有的 php code 都在前一天晚上被更動過。
+<ol>
+<li>這些 code 會在使用者開啟時連至某個網站的 javascript 且執行，開啟一個 iframe 窗並傳送資訊出去。</li>
+</ol>
+</li>
+<li>在一些目錄中出現了 tmp_xxx.php 類型的 php。
+<ol>
+<li>其中有 @eval 之類的指令，我想應該是為了讓攻擊端方便執行任何指令而撰寫的 php script。</li>
+</ol>
+</li>
+<li>.htaccess 檔也被更動過。
+<ol>
+<li>屬性被改為擁有者唯讀，所有的錯誤網頁均被指向一個稱為 xxx-security.ru 的網站。</li>
+</ol>
+</li>
+</ol>
+<p>由於目前我有在使用的系統主要就是 WordPress 還有一些自己寫的簡單的 php script ，而 WordPress 是有定期在做更新的。稍微查了一下 WordPress 近期爆出的漏洞， 最新的 3.2.1 版的 WordPress 有一個關於利用留言標題做 XSS 的漏洞，但這應該不至於讓他有寫入 Server 端檔案的能力。我調查了一下過往有使用的一些系統，已經沒有在使用的系統中有一些並沒有定期更新，我猜想這有可能是造成被入侵的原因。</p>
+<p>我先試著將 .htaccess 跟一部份的 php 還原，結果莫約半小時候 .htaccess 跟那些 php 檔又再次被改回去，可以推測這個攻擊應該是用程式自動進行的行為，因此我要測試攻擊的來源就變得比較容易 – 試著移除可能有問題的東西，若還是持續糟到攻擊就代表沒猜對。於是我試著移掉較少用的系統後，目前就沒有再遭受攻擊了。目前已提出 Google 重新審核的要求了，不過現在還是會跳出警告的畫面。我想也許要過一陣子才會正常吧。</p>
+<p>記得大學第一次接觸 CGI 時寫了一個「許願板」的程式，留言後網頁會給你「吉」或是「兇」的回應；當時對 Server 端程式的安全性還沒有很注意，很快的就被同學找到如何得到「大吉」還有怎樣把回傳的 html 整個搞爛。這其實是一種感覺很糟的事情，但我們都應該這沒有造成更嚴重的損失，比方說，密碼被竄改，信用卡號被取走，帳號被人利用來做壞事 ( 例如，請人家幫忙買遊戲點數之類的 ) 。</p>
+<p>XSS 剛開始要流行時我跟同學做過一個實驗，利用信件內的 html 及 javascript 試著在 Yahoo! Mail 中透過 Image 網址取得使用者 Cookie 中的 Session ID，沒想到很容易的就取得；由於網站一般是透過 Session ID 來判斷使用者，所以這代表我屆時即可以以該使用者的身份連入 Yahoo! Mail 甚至其它服務。 也許從 Server 端還可以透過判斷 IP Address 來阻擋不正常的連線，但這代表有些資訊已經可以透過簡單的「開啟郵件」的動作流出了。換句話說，只要你的網站允許執行不明來源的 javascript ，就有可能發生這樣的事情。</p>
+<p>其實一般人根本不會知道哪些東西可能會有什麼問題，或為什麼。就連我也不知道我現在的網站是不是還有什麼漏洞。搞不好過幾天 WordPress 3.2.1 / 或是某些我使用的 Plugin 又被發現了一些問題，然後我的網站又被駭了也說不定。我們都在知與無知中掙扎，只能期待著自己不是第一個碰到問題的人，然後趕快在出事前把別人用血淚換來的教訓 patch 進來。</p>
+<p>還是來備份比較實在阿，哈哈。</p>
+
+								
+				<p class="postmetadata alt">
+					<small>
+						This entry was posted
+												on Sunday, November 13th, 2011 at 10:24 am						and is filed under <a rel="category" href="http://www.tkirby.org/blog/?cat=7">其它</a>.
+						You can follow any responses to this entry through the <a href="http://www.tkirby.org/blog/?feed=rss2&amp;p=1221">RSS 2.0</a> feed.
+
+													You can <a href="#respond">leave a response</a>, or <a rel="trackback" href="http://www.tkirby.org/blog/wp-trackback.php?p=1221">trackback</a> from your own site.
+
+						
+					</small>
+				</p>
+
+			</div>
+		
