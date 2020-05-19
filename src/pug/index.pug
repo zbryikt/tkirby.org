@@ -20,3 +20,6 @@ html
             style=`background-image:url(${post.img})`)
             .my-0.text-truncate #{post.text}
 
+    script Array.from(document.querySelectorAll('img')).map(function(it) { it.classList.add('ldlz'); });
+    +script("/assets/lib/ldui/ldui.min.js")
+      

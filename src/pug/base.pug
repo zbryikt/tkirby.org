@@ -20,5 +20,10 @@ html
         height: 638px
       .p478ll, .p478lr
         &, img { width: 478px }
+      .p960 img { min-height: 639px }
+      .p478ll, .p478lr
+        img { min-height: 318px }
   body
     .w-1024.mx-auto.rwd.typeset.heading-contrast(style="padding:24px") !{html}
+    script Array.from(document.querySelectorAll('img')).map(function(it) { it.classList.add('ldlz'); });
+    +script("/assets/lib/ldui/ldui.min.js")
