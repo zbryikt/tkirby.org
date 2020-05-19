@@ -1,0 +1,22 @@
+//- module
+doctype html
+include /../../static/assets/lib/ldui/pug/ldui.pug
+html
+  head
+    +css("/assets/lib/bootstrap/4.3.1/css/bootstrap.min.css")
+    +css("/assets/lib/ldui/ldui.min.css")
+    style(type="text/css"): :stylus
+      h2
+        margin: 3em 0 1em!important
+        font-size: 3em!important
+      img.photo 
+        margin: 2px
+      .postmetadata
+        margin-top: 3em
+        padding-top: 3em
+        border-top: 1px solid #ccc
+      .lightbox
+        display: inline-block
+        height: 638px
+  body
+    .w-1024.mx-auto.rwd.typeset.heading-contrast(style="padding:24px") !{html}

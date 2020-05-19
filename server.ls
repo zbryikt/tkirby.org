@@ -11,7 +11,7 @@ api = (server) ->
     file = "src/pug/html/#{req.query.p}.html"
     if !fs.exists-sync(file) => return res.status(404).send!
     html = fs.read-file-sync file .toString!
-    res.render 'index.pug', {html}
+    res.render 'base.pug', {html}
     return null
 
 main = do
