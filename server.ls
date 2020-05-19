@@ -7,6 +7,7 @@ if !cfgfile => cfgfile = 'config.json'
 
 api = (server) ->
   server.app.get \/blog/, (req, res, next) ->
+    if !req.query.p => res.render 'index.pug'
     if !/^(\d{2,5})+$/.exec(req.query.p) => return res.send!
     file = "src/pug/html/#{req.query.p}.html"
     if !fs.exists-sync(file) => return res.status(404).send!
