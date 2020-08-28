@@ -1,0 +1,262 @@
+doctype html
+include /../../static/assets/lib/ldui/pug/ldui.pug
+html
+  head
+    +css("/assets/lib/bootstrap/4.3.1/css/bootstrap.min.css")
+    +css("/assets/lib/ldui/ldui.min.css")
+  body
+    mixin problem(idx,content)
+      .mb-4.pb-2
+        .mb-1 #{idx}. #{content}
+        block
+    mixin radio(n,v,c)
+      .form-check.mb-1
+        input.form-check-input.clickable(type="radio",name=n,value=v)
+        label.form-check-label.clickable.no-select (#{v}) #{c}
+
+    .w-1024.mx-auto.rwd.typeset.heading-contrast(style="padding:24px") 
+      h2 台灣山友簡易分級測驗
+      .entry
+        p: a(rel="lightbox",href="https://tkirby.org/album/topics/misc/13.jpg",title="13.jpg")
+          img.alignnone(src="https://tkirby.org/album/topics/misc/13.jpg",style="width:960px;height:639px")
+
+        p 近日新聞傳出，由於台新金控總經理林克孝日前登山墜崖過世，農委會林務局決定著手建置國內選定登山步道之安全措施及分級管理，以防憾事再傳。我認為這對林先生這次的意外幫助恐怕並不大，但也許可以避免日前獨攀白姑大山者山難意外的發生。不過，若真的要進行登山步道分級，我認為倒不如先規劃並執行山友分級，相信對降低意外發生的機會會有很大的幫助。
+        p 那麼要如何進行山友分級呢？透過以下的問答應該可以達到相當好的功效。
+      hr
+      h4 § 台灣山友簡易分級測驗 §
+      +problem("1", "請問下列疾病中曾在山上發生過致死率最高的是?")
+        +radio("p1", "a", "高山症")
+        +radio("p1", "b", "低山症")
+        +radio("p1", "c", "山癌")
+        +radio("p1", "d", "嚴重急性呼吸道症候群")
+
+      +problem("2", "當前方隊友跟你說, “快到了, 再15分鐘”, 他的意思是")
+        +radio("p2", "a", "再 15 分鐘就到了")
+        +radio("p2", "b", "再 15 分鐘你就會發現快到了")
+        +radio("p2", "c", "再 15 分鐘, 就過了 15 分鐘")
+        +radio("p2", "d", "快到了, 再 15 公里")
+
+      +problem("3", "素有台灣五嶽之稱的山為?")
+        +radio("p3", "a", "華山,泰山,嵩山,衡山,恆山")
+        +radio("p3", "b", "二格山,三錐山,四大天王山,五分山,六十石山")
+        +radio("p3", "c", "六順山,七彩湖,八五峰,九紀山,石筍尖")
+        +radio("p3", "d", "南湖大山,雪山,玉山,北大武山,秀姑巒山")
+        +radio("p3", "e", "合歡山,玉山,雪山,奇萊山,七星山")
+
+      +problem("4", "路上遇到三位頭戴斗笠身穿黃色小飛俠雨衣的山友, 你應當")
+        +radio("p4", "a", "親切的打招呼")
+        +radio("p4", "b", "跟著他們走")
+        +radio("p4", "c", "也拿出斗笠及黃色小飛俠雨衣")
+        +radio("p4", "d", "以現行犯逮捕之並且報警處理")
+        +radio("p4", "e", "伴隨劇烈慘叫聲迅速逃離現場")
+
+      +problem("5", "在國家公園界內最不應該做的事情?")
+        +radio("p5", "a", "生火")
+        +radio("p5", "b", "生氣")
+        +radio("p5", "c", "生病")
+        +radio("p5", "d", "生產")
+
+      +problem("6", "在台灣一般把多高的山歸類為高山?")
+        +radio("p6", "a", "3000公分以上")
+        +radio("p6", "b", "3000公吋以上")
+        +radio("p6", "c", "3000公尺以上")
+        +radio("p6", "d", "3000公里以上")
+
+      +problem("7", "下列台灣山岳, 難度最高的是?")
+        +radio("p7", "a", "合歡東峰")
+        +radio("p7", "b", "合歡南峰")
+        +radio("p7", "c", "合歡西峰")
+        +radio("p7", "d", "合歡北峰")
+
+      +problem("8", "下列台灣山岳, 難度最低的是?")
+        +radio("p8", "a", "雪山")
+        +radio("p8", "b", "小雪山")
+        +radio("p8", "c", "中雪山")
+        +radio("p8", "d", "大雪山")
+
+      +problem("9", "爬山到一半, 有人問你他為什麼在這裡的時候, 他想表達的是")
+        +radio("p9", "a", "他迷路了")
+        +radio("p9", "b", "他迷惘了")
+        +radio("p9", "c", "他在這裡很久了, 希望你帶他回家")
+        +radio("p9", "d", "他知道他為什麼在這裡，只是他不願承認他知道")
+
+      +problem("10", "下列哪項指的是湖泊?")
+        +radio("p10", "a", "竹子湖")
+        +radio("p10", "b", "奮起湖")
+        +radio("p10", "c", "向天湖")
+        +radio("p10", "d", "七星潭")
+
+      +problem("11", "爬到山頂後, 下列哪個行為是最適當的?")
+        +radio("p11", "a", "大喊「我攻頂了！」")
+        +radio("p11", "b", "大喊「我登頂了！」")
+        +radio("p11", "c", "大喊「我絕頂了！」")
+        +radio("p11", "d", "大喊「我滅頂了！」")
+        +radio("p11", "e", "大喊「我頂！」")
+        +radio("p11", "f", "一腳踩在三角點上")
+
+      +problem("12", "下列那座山緯度最高？")
+        +radio("p12", "a", "南玉山")
+        +radio("p12", "b", "南湖大山")
+        +radio("p12", "c", "北大武山")
+        +radio("p12", "d", "南插天山")
+
+      +problem("13", "承上題，下列哪個地方海拔最高？")
+        +radio("p13", "a", "南玉山")
+        +radio("p13", "b", "阿玉山")
+        +radio("p13", "c", "林田山")
+        +radio("p13", "d", "品田山")
+        +radio("p13", "e", "品田牧場")
+        +radio("p13", "f", "武陵農場")
+        +radio("p13", "g", "武嶺")
+
+      +problem("14", "一般來說陽明山東西大縱走大約多久可以走完?")
+        +radio("p14", "a", "10分鐘")
+        +radio("p14", "b", "10小時")
+        +radio("p14", "c", "10天")
+        +radio("p14", "d", "10週")
+
+      +problem("15", "承上題，中央山脈大縱走大約多久可以走完?")
+        +radio("p15", "a", "8分鐘")
+        +radio("p15", "b", "8小時")
+        +radio("p15", "c", "8天")
+        +radio("p15", "d", "8週")
+        +radio("p15", "e", "身為一個正常人類我是不會把他走完的。")
+
+      +problem("16", "孫海橋名稱的由來?")
+        +radio("p16", "a", "紀念孫海")
+        +radio("p16", "b", "紀念孫文")
+        +radio("p16", "c", "附近猴孫多似海")
+        +radio("p16", "d", "soon-hi 的英文音譯, 代表快到了的意思")
+        +radio("p16", "e", "台灣原住民語音譯，意為「山豬之路」")
+
+      +problem("17", "下列關於山林間常見山屋的描述何者為真?")
+        +radio("p17", "a", "有衛浴設施及熱水、開飲機、販賣部及公用電話")
+        +radio("p17", "b", "有美食街、精品店、停車場及特賣會")
+        +radio("p17", "c", "有兩人房、四人房、八人通舖及餐廳")
+        +radio("p17", "d", "常須事先訂位，能住到山屋為相當奢華的享受")
+
+      +problem("18", "請問下列哪個不是台灣島內真正的山?")
+        +radio("p18", "a", "枕頭山")
+        +radio("p18", "b", "橘子山")
+        +radio("p18", "c", "那是山")
+        +radio("p18", "d", "這是山")
+
+      +problem("19", "承上題，下列哪座山雖然是山但不在台灣島內?")
+        +radio("p19", "a", "庫哈諾辛山")
+        +radio("p19", "b", "布拉克桑山")
+        +radio("p19", "c", "穆特勒布山")
+        +radio("p19", "d", "埃佛勒斯峰")
+
+      +problem("20", "很想要爬位於自然保留區內的北插天山，你應該:")
+        +radio("p20", "a", "加入北插之友，參與社團活動偕同北插之怪前往")
+        +radio("p20", "b", "加入政府機關，舉辦部門員工旅遊偕同高官前往")
+        +radio("p20", "c", "加入學校社團，利用研究教育名義偕同學妹前往")
+        +radio("p20", "d", "加入部落族群，歸順原住民同胞後偕同獵槍前往")
+
+      +problem("21", "嘉明湖素有什麼的美稱？")
+        +radio("p21", "a", "天使的眼淚")
+        +radio("p21", "b", "惡魔的心臟")
+        +radio("p21", "c", "妖精的尾巴")
+        +radio("p21", "d", "魔導的少年")
+
+      +problem("22", "以下登山裝備最不可或缺的是?")
+        +radio("p22", "a", "雨衣")
+        +radio("p22", "b", "雨傘")
+        +radio("p22", "c", "雨男")
+        +radio("p22", "d", "雨備")
+
+      +problem("23", "位於九份的基隆山其別名下列何者為非？")
+        +radio("p23", "a", "雞籠山")
+        +radio("p23", "b", "九份二山")
+        +radio("p23", "c", "大肚美人山")
+
+      +problem("24", "當在山頂看著山下，隊友吐出了一句話：「我到底是怎麼上來的」，他的意思是：")
+        +radio("p24", "a", "他不知道他是怎麼上來的")
+        +radio("p24", "b", "高山症發作，一時想不起來")
+        +radio("p24", "c", "他不確定下一次還要不要上來")
+        +radio("p24", "d", "他感嘆若跌到谷底，就不會再上來了")
+
+      +problem("25", "雪季登山攜帶墨鏡的原因為何?")
+        +radio("p25", "a", "預防因打雪仗的情侶造成的失明")
+        +radio("p25", "b", "預防雪地過強的反光造成的雪盲")
+        +radio("p25", "c", "避免受到MIB記憶消除器除去記憶")
+        +radio("p25", "d", "預防雪中行走時遭粉絲推擠而跌倒")
+
+      +problem("加分題: 以下何者是正確的登山觀念?")
+        +radio("p26", "a", "體力很好，所以一個人爬也行")
+        +radio("p26", "b", "方向感好，所以地圖不需要帶")
+        +radio("p26", "c", "我是晴男，所以不會用到雨衣")
+        +radio("p26", "d", "意外絕對不會發生在我身上的")
+        +radio("p26", "e", "迷路時下溪谷是回家唯一的路")
+
+      .d-flex
+        .btn.btn-outline-dark.mr-4(ld="calc") 計算分數
+        .d-none(ld="calced") 你的分數: #[span.text-danger.text-lg.font-weight-bold(ld="score") 0]
+
+      hr
+
+      h3 評分結果分析與建議
+      .d-flex.mb-3
+        .text-right.mr-2(style="width:5em;") &nbsp;&nbsp; > 100 –
+        .flex-grow-1 相信你除了基本的登山知識以外，你也具備了相當足夠的KUSO力。下次爬山請務必要找我。#[div: b 建議路線：茶墾、唐穗、南北插]
+      .d-flex.mb-3
+        .text-right.mr-2(style="width:5em") 60 – 100 –
+        .flex-grow-1 我想你看到繩子會(興奮地)爆衝，在林道上偶而會滑落，基本來說注意安全是重要的。#[div: b 建議路線：死亡稜、卡樓羅、關山大斷崖]
+      .d-flex.mb-3
+        .text-right.mr-2(style="width:5em") 30 – &nbsp;60 –
+        .flex-grow-1 你可能有些地方還沒搞懂，比方說玉山並不是台灣最難爬的山，還有山屋通常沒有賣泡麵。#[div: b 建議路線：玉山、雪山、合歡山]
+      .d-flex.mb-3
+        .text-right.mr-2(style="width:5em") 0 – &nbsp;30 –
+        .flex-grow-1 我認為你不該會對這個測驗有興趣才對。百貨公司週年慶快到了，也許你該去注意一下。#[div: b 建議路線：新光三越、中友、漢神百貨]
+      .d-flex.mb-3
+        .text-right.mr-2(style="width:5em") < &nbsp;&nbsp;0 –
+        .flex-grow-1 千萬不要去爬山，這對你來說相當危險，對我來說更危險。求你了。#[div: b 建議路線：七股鹽山]
+
+    +script("/assets/lib/ldui/ldui.min.js")
+
+    script: :lsc
+      scores = [
+        [0 4 0 0 1],
+        [0 -5 2 4 0],
+        [0 -4 0 0 4 0],
+        [4 2 -9 -2 2 4],
+        [0 4 3 2 1],
+        [0 -1 0 4 -9],
+        [0 0 -1 4 2],
+        [0 4 3 2 1],
+        [0 2 2 2 4],
+        [0 -5 -5 4 -5],
+        [5 4 4 1 0 -1 -4],
+        [0 -5 0 -5 4],
+        [0 -10 0 0 4 -10 -10 0],
+        [0 -100 4 0 -5],
+        [0 -1000 -100 -10 4 2],
+        [0 4 0 -1 -1 1],
+        [0 -10 -20 -5 4],
+        [-5 0 0 0 4],
+        [0 0 0 0 4],
+        [0 0 -4 4 4],
+        [0 4 0 1 0 ],
+        [0 4 2 0 -2],
+        [0 0 4 0],
+        [0 4 2 3 1],
+        [0 4 4 -4 0],
+        [0 -10 -15 -25 -50 -100]
+      ]
+      sum = 0
+      calced = false
+      view = new ldView do
+        root: document.body
+        action: click: do
+          calc: ->
+            sum := 0
+            [1 to 26].map (idx) ->
+              ans = 0
+              ld$.find("[name=p#{idx}]").map (o) ->
+                if o.checked => ans := "abcdefghijklmnopqrstuvwxyz".indexOf(o.value) + 1
+              sum := sum + scores[idx - 1][ans]
+            calced := true
+            view.render!
+        handler: do
+          score: ({node}) -> node.innerText = (sum or 0)
+          calced: ({node}) -> node.classList.toggle \d-none, !calced
