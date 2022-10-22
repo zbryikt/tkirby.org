@@ -1,0 +1,51 @@
+//- module
+doctype html
+include /../../static/assets/lib/ldui/pug/ldui.pug
+html
+  head
+
+    link(rel="preconnect",href="https://fonts.googleapis.com")
+    link(rel="preconnect",href="https://fonts.gstatic.com",crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&family=Noto+Serif+TC:wght@700&display=swap",rel="stylesheet")
+
+    +css("/assets/lib/bootstrap/4.3.1/css/bootstrap.min.css")
+    +css("/assets/lib/ldui/ldui.min.css")
+    style(type="text/css"): :stylus
+      .typeset
+        font-size: 24px
+        font-family: 'Noto Sans TC', sans-serif
+        html, body
+          font-family: 'Noto Sans TC', sans-serif
+        h1 { font-size: 1.5em; margin-bottom: 1.5em; }
+        h2 { font-size: 1.25em }
+        h3 { font-size: 1.20em }
+        h4 { font-size: 1.15em }
+        h5 { font-size: 1.10em }
+        h6 { font-size: 1.05em }
+        h1,h2,h3,h4,h5,h6
+          font-family: 'Noto Serif TC', serif
+      @media (max-width: 640px)
+        .typeset
+          font-size: 20px
+
+      h2
+        margin: 3em 0 1em!important
+      img.photo 
+        margin: 2px
+      .postmetadata
+        margin-top: 3em
+        padding-top: 3em
+        border-top: 1px solid #ccc
+      .lightbox
+        display: inline-block
+        height: 638px
+      .p478ll, .p478lr
+        &, img { width: 478px }
+      .p960 img { min-height: 639px }
+      .p478ll, .p478lr
+        img { min-height: 318px }
+  body
+    .w-1024.mx-auto.rwd.typeset.heading-contrast.py-4
+      block body
+    script Array.from(document.querySelectorAll('img')).map(function(it) { it.classList.add('ldlz'); });
+    +script("/assets/lib/ldui/ldui.min.js")
