@@ -1,5 +1,9 @@
 extends /pugbase.pug
 block body
+  link(href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap",rel="stylesheet")
+  style(type="text/css"): :stylus
+    html, body { scroll-behavior: smooth }
+    .fn { vertical-align: super; font-size: .75em }
   div: :md
     # 十年觀察：g0v 的嗨與鬆
 
@@ -15,14 +19,18 @@ block body
 
     十年過去，政治生態挪移，外在危機改變，注意力經濟細緻化，buzzwords 星移，人的位置與年齡也都不同了，此時再看這個充滿理想的社群發展，別有滋味。
 
-    草創時宣言中設定的社群幾個初步定調，是早期參與者們對極致開放、平等、群智無組織行動的素樸期待：
+    草創 時宣言中設定的社群幾個初步定調，是早期參與者們對極致開放、平等、群智無組織行動的素樸期待：
 
-    > 我們來自四方
-    > 我們多中心運作、打造自主貢獻文化
-    > 我們實踐公民參與，創造改變
-    > 我們成果開放，取之開源，用之開源
-    > 我們很歡樂，也想改變現狀
-    > 我們就是你
+    <div class="my-5"><hr></div>
+    <div class="my-4 text-center" style="white-space:pre">
+    我們來自四方
+    我們多中心運作、打造自主貢獻文化
+    我們實踐公民參與，創造改變
+    我們成果開放，取之開源，用之開源
+    我們很歡樂，也想改變現狀
+    我們就是你
+    </div>
+    <div class="my-5"><hr></div>
 
     宣言首版寫就於 2013 年初第二次黑客松後，於 2019 修訂，兩波宣言都是多人以文字將當時社群氣氛的捕捉再現。這是台灣青年以開源方式參與社會議題的真實樣貌切面，宣言中沒有寫到黑客松、科技、專案等操作應用層面，讓關鍵概念主要圍繞著「開放」和「參與」。
 
@@ -37,7 +45,7 @@ block body
 
     期間衍生出以專案為形式的各項行動，在各領域乃至公部門形成連結、造成彈性、促成改變，是在與中心化系統抗衡出的結果。這看似緩慢而浪漫，但其實開放模式也已經在經濟層面改變結構的例子。
 
-    早期參與者熟悉 Open Source 社群運作的模式，而近年 Open Source 已經從愛好者聚集分享，成為資本市場上所認可的軟體公司拓展及生態系策略，從 2020 年至今兩年半，全球就有超過 240 億美金的投資[^註1]。在商業上的展露，也說明了開放模式不是家家酒，以及它的潛力。
+    早期參與者熟悉 Open Source 社群運作的模式，而近年 Open Source 已經從愛好者聚集分享，成為資本市場上所認可的軟體公司拓展及生態系策略，從 2020 年至今兩年半，全球就有超過 240 億美金的投資<a class="fn" href="#fn-1">註1</a>。在商業上的展露，也說明了開放模式不是家家酒，以及它的潛力。
 
     開放的力量放長放遠在政治與公共事務上，會造成什麼改變，十年可能只是一個斷點。
 
@@ -69,7 +77,7 @@ block body
 
     ## High Agency / 嗨咖行動者
 
-    我們十年來看到，g0v 的參與者大多有著「先做再說」的精神，類似 High Agency 人格特質的概念（我們姑且將它翻譯成「嗨咖行動者」）。「嗨咖行動者」的特點，就是會用盡辦法達到目標，沒有什麼辦不到的[^註2]。在 g0v 社群中，任何可被分享、傳閱的資料、程式碼、內容，這些階段性的成果會被其他嗨咖繼續使用、擴充，以 open source 模式的貢獻與演化，形成「個體嗨咖行動者」所需的最基本正循環，同時也讓初始的目標被切小、更容易一起達到，因為有其他人一同努力。
+    我們十年來看到，g0v 的參與者大多有著「先做再說」的精神，類似 High Agency 人格特質的概念（我們姑且將它翻譯成「嗨咖行動者」）。「嗨咖行動者」的特點，就是會用盡辦法達到目標，沒有什麼辦不到的<a class="fn" href="#fn-2">註2</a>。在 g0v 社群中，任何可被分享、傳閱的資料、程式碼、內容，這些階段性的成果會被其他嗨咖繼續使用、擴充，以 open source 模式的貢獻與演化，形成「個體嗨咖行動者」所需的最基本正循環，同時也讓初始的目標被切小、更容易一起達到，因為有其他人一同努力。
 
     例如，在政治獻金不數位也不開放的情況下，g0v 社群就曾經多點動起來，發起了眾人到監察院去申請紙本檔案後數位化分享。接著，把整件事變成了萬人參與的群眾外包「手動數位化」遊戲，取得財團與政治關係的完整資料，讓更多人做進一步政金連結的分析。嗨咖行動者不會坐等 5 年後監察院提供公開查閱系統，而是起身行動，直接參與、促成這樣的改變。
 
@@ -104,7 +112,20 @@ block body
     我們也期待不同視角的 g0v 觀察文與提問，會陸續串連出這個多中心發展的社群面貌。
 
     我們的分享暫時到此，接著：
-    So, What are you hacking today? 😉
 
-    [^註1]: 來自 OSSC 2022 年的報告: https://www.coss.community/cossc/global-vc-funding-into-coss-24b-raised-from-jan-2020-to-august-2022-3pc6
-    [^註2]: https://twitter.com/george__mack/status/1068238563660173313
+    <div class="my-5"><hr></div>
+
+    <div class="text-center" style="font-family:'Fuzzy Bubbles', cursive;font-style:italic">So, What are you hacking today? 😉</div>
+    
+    <div class="my-5"><hr></div>
+
+    <div id="fn-1"></div>
+    <div id="fn-2"></div>
+
+    - 註1: 來自 OSSC 2022 年的報告: https://www.coss.community/cossc/global-vc-funding-into-coss-24b-raised-from-jan-2020-to-august-2022-3pc6
+    - 註2: https://twitter.com/george__mack/status/1068238563660173313
+
+    <div class="my-5"><hr></div>
+    <div class="text-muted text-sm">
+      This entry was posted on Saturday, October 22nd, 2022 at 09:04 pm and is filed under 未分類.
+    </div>
