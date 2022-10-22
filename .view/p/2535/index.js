@@ -635,7 +635,7 @@ var meta = {
   url: "https://tkirby.org/p/2535",
   "title": "十年觀察：g0v 的嗨與鬆",
   "description": "g0v 轉眼十年。幾位老 g0ver 參與了尚未名之的發想階段，以及後續社群密集發展的過程，雖然近兩三年較少貢獻，十年週期觸發了一些對發起人的提問，我們都有一點感想和整理，ipa clkao Kirby 三人遂共寫這篇文。",
-  "thumbnail": "https://tkirby.org/albym/topics/g0v/10v.png"
+  "thumbnail": "https://tkirby.org/album/topics/g0v/10v.png"
 };
 ;pug_debug_line = 10;pug_debug_filename = "src\u002Fpug\u002Fp\u002F2535\u002Findex.pug";
 pug_html = pug_html + "\u003Cmeta" + (" property=\"og:url\""+pug_attr("content", meta.url, true, true)) + "\u003E";
