@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+html
+  head
+    meta(charset="utf-8")
+    script.
+      (function() {
+        var p = new URLSearchParams(window.location.search).get('p');
+        if (p) {
+          window.location.replace('/blog/' + p + '/');
+        }
+      })();

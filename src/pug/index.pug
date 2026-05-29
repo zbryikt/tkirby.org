@@ -15,7 +15,7 @@ html
       h1.text-center.my-4.py-4.display-1: b Kirby'#[sup s]
       .d-flex.justify-content-around.flex-wrap
         each post in posts
-          a.mb-4.pb-4.d-block(href=post.url.replace(/www\./,''),style="width:30%")
+          a.mb-4.pb-4.d-block(href=post.url,style="width:30%")
             .w-100.aspect-ratio.ratio-3by2.bg-cover.bg-portrait.bg-light.mb-1(
             style=`background-image:url(${post.img})`)
             .my-0.text-truncate #{post.text}
